@@ -76,7 +76,7 @@ router.get('/:userId', async (req, res) => {
 
       
       if (!finalImagePath || finalImagePath.trim() === '') {
-        finalImagePath = 'http://localhost:3000/images/default.png';
+        finalImagePath = '/images/default.png';
       }
 
       return {

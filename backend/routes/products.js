@@ -9,7 +9,7 @@ const getFullImageUrl = (path) => {
   if (path.startsWith('http')) {
     return path;
   }
-  return `http://localhost:3000${path}`;
+  return `${path}`;
 };
 
 router.get('/api/suggestions', async (req, res) => {
