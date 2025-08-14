@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/cart/${userId}`);
+      const res = await fetch(`/api/cart/${userId}`);
       const data = await res.json();
       cartItems = data;
       renderCartItems();
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   confirmRemoveBtn.addEventListener('click', async () => {
     if (itemToRemove) {
       try {
-        await fetch(`http://localhost:3000/api/cart/${itemToRemove}`, { method: 'DELETE' });
+        await fetch(`/api/cart/${itemToRemove}`, { method: 'DELETE' });
         removeModal.style.display = 'none';
         fetchCart();
       } catch (err) {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cartItems.length === 0) return;
 
     for (let item of cartItems) {
-      await fetch(`http://localhost:3000/api/cart/${item.id}`, { method: 'DELETE' });
+      await fetch(`/api/cart/${item.id}`, { method: 'DELETE' });
     }
     fetchCart();
   });

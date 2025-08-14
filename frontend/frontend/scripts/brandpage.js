@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  fetch(`http://localhost:3000/api/brands/${encodeURIComponent(brand)}`)
+  fetch(`/api/brands/${encodeURIComponent(brand)}`)
     .then(response => response.json())
     .then(products => {
       const productGrid = document.getElementById('product-grid');

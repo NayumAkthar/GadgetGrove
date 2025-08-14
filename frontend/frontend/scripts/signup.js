@@ -19,7 +19,7 @@ async function handleSignup(event) {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/users/signup', {
+    const response = await fetch('/api/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, mobile })
@@ -52,7 +52,7 @@ async function handleLogin(event) {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/users/send-otp', {
+    const response = await fetch('/api/users/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ identifier })
@@ -91,7 +91,7 @@ async function handleOtpSubmit(event) {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/users/verify-otp', {
+    const response = await fetch('/api/users/verify-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ identifier, otp })
@@ -126,7 +126,7 @@ async function resendOtp() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/users/send-otp', {
+    const response = await fetch('/api/users/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ identifier })

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch(`http://localhost:3000/api/product/${encodeURIComponent(productName)}`);
+    const response = await fetch(`/api/product/${encodeURIComponent(productName)}`);
     if (!response.ok) throw new Error('Product fetch failed');
 
     const product = await response.json();
@@ -85,7 +85,7 @@ async function saveAddress() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/address', {
+    const response = await fetch('/api/address', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId, name, pincode, locality, address, city, state })
@@ -109,7 +109,7 @@ async function saveAddress() {
 
 async function fetchAddress(userId) {
   try {
-    const response = await fetch(`http://localhost:3000/api/address/${userId}`);
+    const response = await fetch(`/api/address/${userId}`);
     const data = await response.json();
 
     const currentAddress = document.getElementById('currentAddress');

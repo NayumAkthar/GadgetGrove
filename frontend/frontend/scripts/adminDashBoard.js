@@ -27,7 +27,7 @@ navItems.forEach(item => {
     const formData = new FormData(e.target);
 
     try {
-      const response = await fetch('http://localhost:3000/api/adminfunctions/add-mobile', {
+      const response = await fetch('/api/adminfunctions/add-mobile', {
   method: 'POST',
   body: formData
 });
@@ -51,7 +51,7 @@ navItems.forEach(item => {
     }
 
     try {
-     const response = await fetch(`http://localhost:3000/api/adminfunctions/search-mobile/${searchTerm}`);
+     const response = await fetch(`/api/adminfunctions/search-mobile/${searchTerm}`);
 
       const mobile = await response.json();
 
@@ -81,7 +81,7 @@ navItems.forEach(item => {
     const stock = document.getElementById('edit-stock').value;
 
     try {
-      const response = await fetch(`http://localhost:3000/api/adminfunctions/update-mobile`, {
+      const response = await fetch(`/api/adminfunctions/update-mobile`, {
   method: 'PUT',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ id, price, stock })
@@ -127,7 +127,7 @@ navItems.forEach(item => {
     const formData = new FormData(e.target);
 
     try {
-      const response = await fetch('http://localhost:3000/api/adminfunctions/add-slide', {
+      const response = await fetch('/api/adminfunctions/add-slide', {
   method: 'POST',
   body: formData
 });
@@ -159,7 +159,7 @@ document.getElementById('editSlideForm').addEventListener('submit', async (e) =>
   const formData = new FormData(e.target);
 
   try {
-    const response = await fetch(`http://localhost:3000/api/adminfunctions/update-slide/${slideId}`, {
+    const response = await fetch(`/api/adminfunctions/update-slide/${slideId}`, {
       method: 'PUT',
       body: formData
     });
@@ -179,7 +179,7 @@ document.getElementById('editSlideForm').addEventListener('submit', async (e) =>
 
 async function loadSlides() {
   try {
-    const response = await fetch('http://localhost:3000/api/adminfunctions/slides');
+    const response = await fetch('/api/adminfunctions/slides');
     const slides = await response.json();
 
     const slideList = document.getElementById('slide-list');
@@ -211,7 +211,7 @@ async function loadSlides() {
     if (!confirm('Are you sure you want to delete this slide?')) return;
 
     try {
-      const response = await fetch(`http://localhost:3000/api/adminfunctions/delete-slide/${slideId}`, { method: 'DELETE' });
+      const response = await fetch(`/api/adminfunctions/delete-slide/${slideId}`, { method: 'DELETE' });
 
       if (response.ok) {
         alert('Slide deleted successfully!');
@@ -230,7 +230,7 @@ async function loadSlides() {
     const newPassword = document.getElementById('new-password').value;
 
     try {
-     const response = await fetch('http://localhost:3000/api/adminfunctions/change-password', {
+     const response = await fetch('/api/adminfunctions/change-password', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ oldPassword, newPassword })
@@ -249,7 +249,7 @@ async function loadSlides() {
   });
 async function loadOrders() {
   try {
-    const response = await fetch('http://localhost:3000/api/adminfunctions/orders');
+    const response = await fetch('/api/adminfunctions/orders');
     const orders = await response.json();
 
     const orderList = document.getElementById('order-list');
@@ -277,7 +277,7 @@ async function loadOrders() {
 
 window.viewOrderDetails = async function(orderId) {
   try {
-    const response = await fetch(`http://localhost:3000/api/adminfunctions/order/${orderId}`);
+    const response = await fetch(`/api/adminfunctions/order/${orderId}`);
     const order = await response.json();
 
     const modalBody = document.getElementById('order-details-body');

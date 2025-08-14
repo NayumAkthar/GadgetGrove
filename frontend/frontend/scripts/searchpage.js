@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const productGrid = document.getElementById('product-grid');
   if (productGrid) productGrid.innerHTML = '<p>Loading...</p>';
 
-  fetch(`http://localhost:3000/api/search?query=${encodeURIComponent(query)}`)
+  fetch(`/api/search?query=${encodeURIComponent(query)}`)
     .then(response => response.json())
     .then(products => {
       if (!productGrid) return;

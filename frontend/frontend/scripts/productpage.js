@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  fetch(`http://localhost:3000/api/product/${encodeURIComponent(productName)}`)
+  fetch(`/api/product/${encodeURIComponent(productName)}`)
     .then(response => {
       if (!response.ok) throw new Error("Product not found");
       return response.json();
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-          const res = await fetch('http://localhost:3000/api/cart', {
+          const res = await fetch('/api/cart', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
