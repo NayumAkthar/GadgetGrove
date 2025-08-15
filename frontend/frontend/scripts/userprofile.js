@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const userId = localStorage.getItem('userId');
 
   if (!userId) {
-    window.location.href = 'index.html';
+    window.location.href = '/gindex.html';
     return;
   }
 
@@ -119,21 +119,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (signoutBtn) {
     signoutBtn.addEventListener('click', () => {
       localStorage.removeItem('userId');
-      window.location.href = 'index.html';
+      window.location.href = '/index.html';
     });
   }
 
   const userProfileNav = document.querySelector('.userprofile');
   if (userProfileNav) {
     userProfileNav.addEventListener('click', () => {
-      window.location.href = 'userprofile.html';
+      window.location.href = '/userprofile.html';
     });
   }
 
   const cartNav = document.querySelector('.cart');
   if (cartNav) {
     cartNav.addEventListener('click', () => {
-      window.location.href = 'cart.html';
+      window.location.href = '/cart.html';
     });
   }
 });

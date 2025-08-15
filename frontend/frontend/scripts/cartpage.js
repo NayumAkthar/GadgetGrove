@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Your cart is empty.');
       return;
     }
-    window.location.href = 'checkout.html';
+    window.location.href = '/checkout.html';
   });
 
   fetchCart();
@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (userId) {
     loginProfileLink.textContent = 'Profile';
-    loginProfileLink.href = '/frontend/templets/userprofile.html';
+    loginProfileLink.href = '/userprofile.html';
   } else {
     loginProfileLink.textContent = 'Login';
-    loginProfileLink.href = 'index.html';
+    loginProfileLink.href = '/index.html';
   }
 });
 
@@ -144,7 +144,7 @@ if (searchInput) {
       const searchTerm = e.target.value.trim();
       console.log('Search term entered:', searchTerm);
       if (searchTerm) {
-        window.location.href = `/frontend/templets/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
+        window.location.href = `/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
       }
     }
   });

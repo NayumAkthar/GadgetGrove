@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const userId = localStorage.getItem('userId');
   if (!userId) {
     alert('Please login to continue.');
-    window.location.href = '../templets/index.html';
+    window.location.href = '/index.html';
     return;
   }
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const returnHomeBtn = document.getElementById('return-home-btn');
 
   returnHomeBtn.addEventListener('click', () => {
-    window.location.href = '../templets/homepage.html';
+    window.location.href = '/homepage.html';
   });
 
   window.proceedPayment = async function() {
@@ -129,7 +129,7 @@ try {
   const profileBtn = document.querySelector('.userprofile');
   if (profileBtn) {
     profileBtn.addEventListener('click', () => {
-      window.location.href = '../templets/userprofile.html';
+      window.location.href = '/userprofile.html';
     });
   }
 
@@ -137,7 +137,7 @@ try {
   const cartBtn = document.querySelector('.cart');
   if (cartBtn) {
     cartBtn.addEventListener('click', () => {
-      window.location.href = '../templets/cart.html';
+      window.location.href = '/cart.html';
     });
   }
 
@@ -148,7 +148,7 @@ try {
       if (e.key === 'Enter') {
         const searchTerm = e.target.value.trim();
         if (searchTerm) {
-          window.location.href = `/frontend/templets/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
+          window.location.href = `s/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
         }
       }
     });

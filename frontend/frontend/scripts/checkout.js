@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const userId = localStorage.getItem('userId');
   if (!userId) {
     alert('Please login to continue.');
-    window.location.href = '../templets/index.html';
+    window.location.href = '/index.html';
     return;
   }
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (!productName) {
     alert('No product selected.');
-    window.location.href = './homepage.html';
+    window.location.href = '/homepage.html';
     return;
   }
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const product = await response.json();
     if (!product || product.error) {
       alert('Product not found.');
-      window.location.href = './homepage.html';
+      window.location.href = '/homepage.html';
       return;
     }
 
@@ -134,14 +134,14 @@ function continueCheckout() {
   const productName = encodeURIComponent(document.getElementById('product-name').textContent);
   const productImage = encodeURIComponent(document.getElementById('product-image').src);
 
-  window.location.href = `/frontend/templets/payment.html?total=${total}&product=${productName}&image=${productImage}`;
+  window.location.href = `/payment.html?total=${total}&product=${productName}&image=${productImage}`;
 }
 
 
 const userProfile = document.getElementById('userprofile');
 if (userProfile) {
   userProfile.addEventListener('click', () => {
-    window.location.href = '/frontend/templets/userprofile.html';
+    window.location.href = '/userprofile.html';
   });
 }
 
@@ -149,7 +149,7 @@ if (userProfile) {
 const cart = document.querySelector('.cart');
 if (cart) {
   cart.addEventListener('click', () => {
-    window.location.href = '/frontend/templets/cart.html';
+    window.location.href = '/cart.html';
   });
 }
 
@@ -160,7 +160,7 @@ if (searchInput) {
     if (e.key === 'Enter') {
       const searchTerm = e.target.value.trim();
       if (searchTerm) {
-        window.location.href = `/frontend/templets/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
+        window.location.href = `/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
       }
     }
   });

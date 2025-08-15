@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (res.ok) {
             alert(`${product.name} has been added to your cart!`);
-            window.location.href = '/frontend/templets/cart.html';
+            window.location.href = '/cart.html';
           } else {
             console.error('Add to cart error:', data.message);
             alert('Failed to add item to cart. Please try again.');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 if (buyNowBtn) {
   buyNowBtn.addEventListener('click', () => {
     const productName = encodeURIComponent(product.name);
-    window.location.href = `../templets/checkout.html?product=${productName}`;
+    window.location.href = `/checkout.html?product=${productName}`;
   });
 }
 
@@ -125,7 +125,7 @@ if (buyNowBtn) {
       if (e.key === 'Enter') {
         const searchTerm = e.target.value.trim();
         if (searchTerm) {
-          window.location.href = `/frontend/templets/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
+          window.location.href = `/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
         }
       }
     });
@@ -137,7 +137,7 @@ if (buyNowBtn) {
   const userProfile = document.querySelector('.userprofile');
   if (userProfile) {
     userProfile.addEventListener('click', () => {
-      window.location.href = '/frontend/templets/userprofile.html';
+      window.location.href = 's/userprofile.html';
     });
   }
 
@@ -145,7 +145,7 @@ if (buyNowBtn) {
   const cart = document.querySelector('.cart');
   if (cart) {
     cart.addEventListener('click', () => {
-      window.location.href = '/frontend/templets/cart.html';
+      window.location.href = '/cart.html';
     });
   }
 });

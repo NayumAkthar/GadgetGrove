@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         div.addEventListener('click', () => {
-          window.location.href = `/frontend/templets/productpage.html?product=${encodeURIComponent(product.name)}`;
+          window.location.href = `/productpage.html?product=${encodeURIComponent(product.name)}`;
         });
 
         productGrid.appendChild(div);
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Enter') {
         const searchTerm = e.target.value.trim();
         if (searchTerm) {
-          window.location.href = `/frontend/templets/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
+          window.location.href = `/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
         }
       }
     });
@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const userProfile = document.querySelector('.userprofile');
   if (userProfile) {
     userProfile.addEventListener('click', () => {
-      window.location.href = '/frontend/templets/userprofile.html';
+      window.location.href = '/userprofile.html';
     });
   }
 
   const cart = document.querySelector('.cart');
   if (cart) {
     cart.addEventListener('click', () => {
-      window.location.href = '/frontend/templets/cart.html';
+      window.location.href = '/cart.html';
     });
   }
 });

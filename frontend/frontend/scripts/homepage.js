@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       links.forEach(link => {
         link.addEventListener('click', () => {
-          window.location.href = `/frontend/templets/productpage.html?product=${encodeURIComponent(productName)}`;
+          window.location.href = `/productpage.html?product=${encodeURIComponent(productName)}`;
         });
       });
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userId = localStorage.getItem('userId');
         if (!userId) {
           alert('Please login to add items to your cart.');
-          window.location.href = '/frontend/templets/index.html';
+          window.location.href = '/index.html';
           return;
         }
 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const data = await res.json();
           if (res.ok) {
             alert(`${product.name} has been added to your cart!`);
-            window.location.href = '/frontend/templets/cart.html';
+            window.location.href = '/cart.html';
           } else {
             console.error('Add to cart error:', data.message);
             alert('Failed to add item to cart. Please try again.');
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchTerm = e.target.value.trim();
         console.log('Search term entered:', searchTerm);
         if (searchTerm) {
-          window.location.href = `/frontend/templets/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
+          window.location.href = `/searchpage.html?query=${encodeURIComponent(searchTerm)}`;
         }
       }
     });
@@ -151,14 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const userProfile = document.querySelector('.userprofile');
   if (userProfile) {
     userProfile.addEventListener('click', () => {
-      window.location.href = '/frontend/templets/userprofile.html';
+      window.location.href = '/userprofile.html';
     });
   }
 
   const cart = document.querySelector('.cart');
   if (cart) {
     cart.addEventListener('click', () => {
-      window.location.href = '/frontend/templets/cart.html';
+      window.location.href = '/cart.html';
     });
   }
 });

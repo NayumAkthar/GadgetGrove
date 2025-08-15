@@ -106,7 +106,7 @@ async function handleOtpSubmit(event) {
       
       localStorage.setItem('userId', data.userId);
 
-      window.location.href = './homepage.html';
+      window.location.href = '/homepage.html';
     } else {
       alert(data.message);
     }
