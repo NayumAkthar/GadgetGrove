@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const productGrid = document.getElementById('product-grid');
   if (productGrid) productGrid.innerHTML = '<p>Loading...</p>';
 
-  fetch(`/api/search?query=${encodeURIComponent(query)}`)
+  fetch(`https://gadgetgrove-n38v.onrender.com/api/search?query=${encodeURIComponent(query)}`)
     .then(response => response.json())
     .then(products => {
       if (!productGrid) return;

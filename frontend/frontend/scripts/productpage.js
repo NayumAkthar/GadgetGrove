@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  fetch(`/api/product/${encodeURIComponent(productName)}`)
+  fetch(`https://gadgetgrove-n38v.onrender.com/api/product/${encodeURIComponent(productName)}`)
     .then(response => {
       if (!response.ok) throw new Error("Product not found");
       return response.json();
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-          const res = await fetch('/api/cart', {
+          const res = await fetch('https://gadgetgrove-n38v.onrender.com/api/cart', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

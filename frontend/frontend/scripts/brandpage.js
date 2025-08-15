@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  fetch(`/api/brands/${encodeURIComponent(brand)}`)
+  fetch(`https://gadgetgrove-n38v.onrender.com/api/brands/${encodeURIComponent(brand)}`)
     .then(response => response.json())
     .then(products => {
       const productGrid = document.getElementById('product-grid');

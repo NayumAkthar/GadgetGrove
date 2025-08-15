@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (paymentMethod === 'cod') {
     
       try {
-        const response = await fetch('/api/orders/place-order', {
+        const response = await fetch('https://gadgetgrove-n38v.onrender.com/api/orders/place-order', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(orderData)
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
  
 try {
-  const res = await fetch('/api/payment/create-order', {
+  const res = await fetch('https://gadgetgrove-n38v.onrender.com/api/payment/create-order', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ amount: totalAmount })
@@ -80,7 +80,7 @@ try {
       alert('Payment Successful. Payment ID: ' + response.razorpay_payment_id);
 
       
-      const paymentResponse = await fetch('/api/payment/payment-success', {
+      const paymentResponse = await fetch('https://gadgetgrove-n38v.onrender.com/api/payment/payment-success', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
        body: JSON.stringify({

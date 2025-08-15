@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('/api/slides')
+  fetch('https://gadgetgrove-n38v.onrender.com/api/slides')
     .then(response => response.json())
     .then(slidesData => {
       const carousel = document.querySelector('.carousel');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSlide(currentSlide);
   }
-  fetch('/api/suggestions')
+  fetch('https://gadgetgrove-n38v.onrender.com/api/suggestions')
     .then(response => response.json())
     .then(products => {
       const productList = document.querySelector('.product-list');
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-          const res = await fetch('/api/cart', {
+          const res = await fetch('https://gadgetgrove-n38v.onrender.com/api/cart', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

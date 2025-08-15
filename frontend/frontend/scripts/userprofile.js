@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  fetch(`/api/users/${userId}`)
+  fetch(`https://gadgetgrove-n38v.onrender.com/api/users/${userId}`)
     .then(res => res.json())
     .then(data => {
       document.getElementById('name').value = data.name;
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error fetching user:', err));
 
 
-  fetch(`/api/address/${userId}`)
+  fetch(`https://gadgetgrove-n38v.onrender.com/api/address/${userId}`)
     .then(res => res.json())
     .then(addresses => {
       const address = addresses[0];
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  fetch(`/api/orders/${userId}`)
+  fetch(`https://gadgetgrove-n38v.onrender.com/api/orders/${userId}`)
     .then(res => res.json())
     .then(orders => {
       const orderList = document.querySelector('.orders ul');
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      fetch('/api/address', {
+      fetch('https://gadgetgrove-n38v.onrender.com/api/address', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, name, pincode, locality, address, city, state })
