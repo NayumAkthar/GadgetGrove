@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(slidesData => {
       const carousel = document.querySelector('.carousel');
       carousel.innerHTML = '';
-
       slidesData.forEach((slide, index) => {
         const slideDiv = document.createElement('div');
         slideDiv.className = 'slide' + (index === 0 ? ' active' : '');
