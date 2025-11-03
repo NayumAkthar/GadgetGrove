@@ -1,19 +1,20 @@
 const nodemailer = require('nodemailer');
+const sgTransport = require('nodemailer-sendgrid-transport');
 require('dotenv').config();
 
+const options = {
+    auth: {
+        api_key: process.env.SENDGRID_API_KEY 
+    }
+}
+const transporter = nodemailer.createTransport(sgTransport(options));
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
 
 
 async function sendOtpEmail(to, otp) {
   const mailOptions = {
-    from: `"Gadget Grove" <${process.env.EMAIL_USER}>`,
+    
+    from: `"Gadget Grove" <${process.env.EMAIL_USER}>`, 
     to: to,
     subject: 'Your OTP for Gadget Grove Login',
     text: `Your OTP is: ${otp}`,

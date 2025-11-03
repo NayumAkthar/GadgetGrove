@@ -19,6 +19,7 @@
     "multer-storage-cloudinary": "^4.0.0",
     "mysql2": "^3.14.3",
     "nodemailer": "^7.0.4",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "razorpay": "^2.9.6"
   }
 }
