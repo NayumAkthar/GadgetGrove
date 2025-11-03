@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const userId = localStorage.getItem('userId');
 
   if (!userId) {
-    window.location.href = '/gindex.html';
+    window.location.href = '/index.html';
     return;
   }
 
